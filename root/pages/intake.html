@@ -13,15 +13,24 @@
     </div>
     <nav>
         <ul>
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="/index.html">Home</a></li>
             <li><a href="intake.html">Intake</a></li>
             <li><a href="progress.html">Progress</a></li>
         </ul>
     </nav>
     <div id="body">
         <div id="app">
-            <!-- Application components will go here -->
-             <h1>APPLICATION GOES HERE</h1>
+            <div class="container">
+                <p>Enter a food item and its serving size (in grams):</p>
+                <input type="text" id="foodInput" placeholder="e.g., Chicken">
+                <input type="number" id="servingSize" placeholder="Serving size (grams)" min="1">
+                <button id="calculateBtn">Calculate Macros</button>
+                <div id="result">
+                    <h2>Results:</h2>
+                    <p id="calories">Calories: -- kcal</p>
+                    <p id="protein">Protein: -- g</p>
+                    <p id="fat">Fat: -- g</p>
+                    <p id="carbs">Carbohydrates: -- g</p>
         </div>
     </div>
     <footer>
