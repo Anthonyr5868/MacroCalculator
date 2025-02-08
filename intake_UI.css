@@ -1,0 +1,78 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .container {
+    background: white; /* White background for the calculator */
+    padding: 30px; /* Spacing inside the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center-align text */
+    width: 350px; /* Fixed width for consistency */
+  }
+  
+  h1 {
+    font-size: 28px; /* Larger heading */
+    margin-bottom: 15px; /* Space below the heading */
+    color: #333; /* Dark gray text */
+  }
+  
+  p {
+    margin: 10px 0; /* Space above and below paragraphs */
+    font-size: 14px; /* Smaller font size for descriptions */
+    color: #555; /* Medium gray text */
+  }
+  
+  /* Input Fields */
+  input[type="text"],
+  input[type="number"] {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space between inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 14px; /* Font size inside inputs */
+  }
+  
+  /* Button */
+  button {
+    width: 100%; /* Full width button */
+    padding: 12px; /* Padding inside the button */
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Results Section */
+  #result {
+    margin-top: 100px; /* Space above the results */
+    text-align: left; /* Left-align results */
+  }
+  
+  #result h2 {
+    font-size: 18px; /* Medium-sized heading */
+    margin-bottom: 10px; /* Space below the heading */
+    color: #333; /* Dark gray text */
+  }
+  
+  #result p {
+    margin: 5px 0; /* Small spacing between result lines */
+    font-size: 14px; /* Smaller font size for results */
+    color: #555; /* Medium gray text */
+  }
