@@ -21,28 +21,22 @@
     </nav>
     <div id="body">
         <div id="app">
-            <!-- <div class="container">
-                <p>Enter a food item and its serving size (in grams):</p>
-                <input type="text" id="foodInput" placeholder="e.g., Chicken">
-                <input type="number" id="servingSize" placeholder="Serving size (grams)" min="1">
-                <button id="calculateBtn">Calculate Macros</button>
-                <button type="button" onclick="getFoodCalories()">Calculate Macros</button>
-                <div id="result">
-                    <h2>Results:</h2>
-                    <p id="calories">Calories: -- kcal</p>
-                    <p id="protein">Protein: -- g</p>
-                    <p id="fat">Fat: -- g</p>
-                    <p id="carbs">Carbohydrates: -- g</p> -->
-            <div class="container">
-                <!-- Food Calorie Lookup Section -->
-                <h1>Food Calorie Lookup</h1>
-                <form id="foodForm">
-                    <label for="foodQuery">Search for a food:</label>
-                    <input type="text" id="foodQuery" placeholder="e.g., apple, chicken breast" required>
-                    <button type="button" onclick="getFoodCalories()">Get Calories</button>
-                </form>
+            <!-- Food Calorie Lookup Section -->
+            <h1>Food Calorie Lookup</h1>
+            <form id="foodForm">
+                <!-- Food Item -->
+                <label for="foodQuery">Enter a food item:</label>
+                <input type="text" id="foodQuery" placeholder="e.g., apple, chicken breast" required><br><br>
+                
+                <!-- Serving Size -->
+                <label for="servingSize">Enter serving size (grams):</label>
+                <input type="number" id="servingSize" placeholder="Serving size in grams" min="1" required><br><br>
+                
+                <!-- Button to fetch data -->
+                <button type="button" onclick="getFoodCalories()">Get Macros</button>
+            </form>
         
-                <div class="food-result" id="foodResult"></div>
+            <div class="food-result" id="foodResult"></div>
         </div>
     </div>
     <footer>
