@@ -33,17 +33,19 @@
                     <p id="protein">Protein: -- g</p>
                     <p id="fat">Fat: -- g</p>
                     <p id="carbs">Carbohydrates: -- g</p> -->
-            <div class="container">
-                <!-- Food Calorie Lookup Section -->
-                <h1>Food Calorie Lookup</h1>
-                <form id="foodForm">
-                    <label for="foodQuery">Search for a food:</label>
-                    <input type="text" id="foodQuery" placeholder="e.g., apple, chicken breast" required>
-                    <button type="button" onclick="getFoodCalories()">Get Calories</button>
-                </form>
+
+        <div class="container">
+            <!-- Food Calorie Lookup Section -->
+            <h1>Food Calorie Lookup</h1>
+            <form id="foodForm" onsubmit="getFoodCalories(); return false;">
+                <label for="foodQuery">Search for a food:</label>
+                <input type="text" id="foodQuery" placeholder="e.g., apple, chicken breast" required>
+                <button type="submit">Get Calories</button>
+            </form>
         
-                <div class="food-result" id="foodResult"></div>
+            <div class="food-result" id="foodResult"></div>
         </div>
+        
     </div>
     <footer>
         <p>&copy; 2025 Macro Calculator. All rights reserved.</p>
