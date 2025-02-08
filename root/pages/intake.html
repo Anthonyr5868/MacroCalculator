@@ -23,7 +23,7 @@
         <div id="app">
             <!-- Food Calorie Lookup Section -->
             <h1>Food Calorie Lookup</h1>
-            <form id="foodForm">
+            <form id="foodForm" onsubmit="getFoodCalories(); return false;">
                 <!-- Food Item -->
                 <label for="foodQuery">Enter a food item:</label>
                 <input type="text" id="foodQuery" placeholder="e.g., apple, chicken breast" required><br><br>
@@ -33,11 +33,12 @@
                 <input type="number" id="servingSize" placeholder="Serving size in grams" min="1" required><br><br>
                 
                 <!-- Button to fetch data -->
-                <button type="button" onclick="getFoodCalories()">Get Macros</button>
+                <button type="submit">Get Macros</button>
             </form>
         
             <div class="food-result" id="foodResult"></div>
         </div>
+
         
     </div>
     <footer>
