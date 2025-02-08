@@ -1,4 +1,4 @@
-# Ignore DS_Store files
+# Ignore DS_Store Files
 .DS_Store
 root/.DS_Store
 root/css/.DS_Store
