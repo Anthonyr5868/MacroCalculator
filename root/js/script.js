@@ -3,7 +3,7 @@ async function getFoodCalories() {
     const foodQuery = document.getElementById('foodQuery').value;
     const servingSize = parseFloat(document.getElementById('servingSize').value); // Get serving size in grams
     const appId = 'fffccd4f'; // Replace with your Nutritionix App ID
-    const appKey = '4e7650560f913fe319761155a0279565'; // Replace with your Nutritionix App Key
+    const appKey = 'secrets.f816c3a9ed3b9579106996f245c87c21'; // Replace with your Nutritionix App Key
     const url = 'https://trackapi.nutritionix.com/v2/natural/nutrients';
     
     const headers = {
