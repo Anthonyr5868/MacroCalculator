@@ -1,16 +1,20 @@
 // Fetch Food Calories and Macros from Nutritionix API
 async function getFoodCalories() {
     const foodQuery = document.getElementById('foodQuery').value;
+    const servingSize = parseFloat(document.getElementById('servingSize').value); // Get serving size in grams
     const appId = 'fffccd4f'; // Replace with your Nutritionix App ID
     const appKey = '4e7650560f913fe319761155a0279565'; // Replace with your Nutritionix App Key
     const url = 'https://trackapi.nutritionix.com/v2/natural/nutrients';
+    
     const headers = {
         'Content-Type': 'application/json',
         'x-app-id': appId,
         'x-app-key': appKey
     };
+
     const body = {
-        query: foodQuery
+        query: foodQuery,
+        num_servings: servingSize // Pass the serving size to the API
     };
 
     try {
@@ -26,19 +30,26 @@ async function getFoodCalories() {
             const foodResultDiv = document.getElementById('foodResult');
 
             // Extract macronutrient data from the API response
-            const protein = food.nf_protein || 0; // Protein in grams
-            const fat = food.nf_total_fat || 0;  // Fat in grams
-            const carbs = food.nf_total_carbohydrate || 0; // Carbs in grams
-            const servingWeightGrams = food.serving_weight_grams || 0; // Serving size in grams
+            const standardServingSize = food.serving_weight_grams || 100; // Default to 100g if no standard size available
+            const proteinPerServing = food.nf_protein || 0; // Protein in grams
+            const fatPerServing = food.nf_total_fat || 0;  // Fat in grams
+            const carbsPerServing = food.nf_total_carbohydrate || 0; // Carbs in grams
+            const caloriesPerServing = food.nf_calories || 0; // Calories per serving
+
+            // Calculate scaled values based on user input for serving size
+            const scaledProtein = (servingSize / standardServingSize) * proteinPerServing;
+            const scaledFat = (servingSize / standardServingSize) * fatPerServing;
+            const scaledCarbs = (servingSize / standardServingSize) * carbsPerServing;
+            const scaledCalories = (servingSize / standardServingSize) * caloriesPerServing;
 
             // Display the food's calorie, macro, and serving size information
             foodResultDiv.innerHTML = `
                 <p><strong>${food.food_name}:</strong></p>
-                <p><strong>Serving Size:</strong> ${Math.round(servingWeightGrams)} grams</p>
-                <p><strong>Calories:</strong> ${Math.round(food.nf_calories)} per serving</p>
-                <p><strong>Protein (g):</strong> ${Math.round(protein)}</p>
-                <p><strong>Fat (g):</strong> ${Math.round(fat)}</p>
-                <p><strong>Carbs (g):</strong> ${Math.round(carbs)}</p>
+                <p><strong>Serving Size:</strong> ${Math.round(servingSize)} grams</p>
+                <p><strong>Calories:</strong> ${Math.round(scaledCalories)} kcal</p>
+                <p><strong>Protein:</strong> ${Math.round(scaledProtein)} g</p>
+                <p><strong>Fat:</strong> ${Math.round(scaledFat)} g</p>
+                <p><strong>Carbs:</strong> ${Math.round(scaledCarbs)} g</p>
             `;
         } else {
             alert('Food not found. Please try another query.');
