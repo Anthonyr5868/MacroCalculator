@@ -1,9 +1,2 @@
-# Ignore DS_Store files
+# Ignore DS_Store Files
 .DS_Store
-css/.DS_Store
-images/.DS_Store
-js/.DS_Store
-pages/.DS_Store
-
-# Ignore environment file
-.env
