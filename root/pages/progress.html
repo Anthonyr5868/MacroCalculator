@@ -20,13 +20,11 @@
     </nav>
     <div id="body">
         <div id="app">
-            <!-- Application components will go here -->
             <h1>Enter Health Data</h1>
             <form id="progress-form">
                 <label for="age">Age:</label>
                 <input type="number" id="age" name="age" required><br>
                 
-                <!-- Let weight input accept decimals -->
                 <label for="weight">Weight (kg):</label>
                 <input type="number" id="weight" name="weight" step="0.1" required><br>
                 
@@ -62,11 +60,14 @@
                 
                 <input type="submit" value="Submit">
             </form>
-             
+
+            <div id="macro-result"></div> <!-- New section for macro results -->
+
         </div>
     </div>
     <footer>
         <p>&copy; 2025 Macro Calculator. All rights reserved.</p>
     </footer>
+    <script src="../js/progress.js"></script> <!-- New JavaScript file for progress calculations -->
 </body>
 </html>
